@@ -15,11 +15,13 @@ from models.user import User
 
 @app_views.route('/status')
 def get_status():
+    '''get status of api'''
     return jsonify(status="OK")
 
 
 @app_views.route('/stats')
 def get_stats():
+    ''' get stats of api'''
     objects = {
         'amenities': Amenity,
         'cities': City,
