@@ -72,13 +72,13 @@ class FileStorage:
     def count(self, cls=None):
         """Returns the number of objects in storage matching the given class"""
         return len(self.all(cls))
-    
+
     def get(self, cls, id):
-        """Returns the object based on the class and its ID, or None if not found"""
+        """Returns the object based on the class and its ID, or None"""
         if cls:
             ret = list(
                 filter(
-                    lambda x : type(x) is cls and x.id == id,
+                    lambda x: type(x) is cls and x.id == id,
                     self.__objects.values()
                 )
             )
